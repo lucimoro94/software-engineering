@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshCut B2B Platform - Use Case Diagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #000;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        svg {
+            width: 100%;
+            height: auto;
+            border: 1px solid #000;
+        }
+        .actor-text {
+            font-size: 12px;
+            fill: #000;
+        }
+        .use-case-text {
+            font-size: 11px;
+            fill: #000;
+        }
+        .system-boundary {
+            fill: none;
+            stroke: #000;
+            stroke-width: 2;
+        }
+        .actor-box {
+            fill: white;
+            stroke: #000;
+            stroke-width: 1;
+        }
+        .use-case-ellipse {
+            fill: white;
+            stroke: #000;
+            stroke-width: 1;
+        }
+        .connection {
+            stroke: #000;
+            stroke-width: 1;
+            fill: none;
+        }
+        .include-line {
+            stroke: #000;
+            stroke-width: 1;
+            stroke-dasharray: 5,5;
+            fill: none;
+        }
+        .extend-line {
+            stroke: #000;
+            stroke-width: 1;
+            stroke-dasharray: 3,3;
+            fill: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Use Case Diagram - FreshCut B2B E-commerce Platform</h1>
+        
+        <svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+            <!-- Define arrow markers -->
+            <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="7" 
+                        refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+                </marker>
+                <marker id="arrow-dashed" markerWidth="10" markerHeight="7" 
+                        refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+                </marker>
+            </defs>
+            
+            <!-- System Boundary Box -->
+            <rect x="250" y="50" width="500" height="700" class="system-boundary"/>
+            <text x="500" y="75" text-anchor="middle" class="actor-text" font-weight="bold">
+                FreshCut B2B System
+            </text>
+            
+            <!-- LEFT SIDE ACTORS -->
+            <!-- Guest User -->
+            <rect x="50" y="120" width="100" height="30" class="actor-box"/>
+            <text x="100" y="140" text-anchor="middle" class="actor-text">Guest User</text>
+            
+            <!-- Registered Buyer -->
+            <rect x="50" y="250" width="100" height="30" class="actor-box"/>
+            <text x="100" y="270" text-anchor="middle" class="actor-text">Registered Buyer</text>
+            
+            <!-- Company Manager -->
+            <rect x="50" y="450" width="100" height="30" class="actor-box"/>
+            <text x="100" y="470" text-anchor="middle" class="actor-text">Company Manager</text>
+            
+            <!-- Admin -->
+            <rect x="50" y="650" width="100" height="30" class="actor-box"/>
+            <text x="100" y="670" text-anchor="middle" class="actor-text">Admin</text>
+            
+            <!-- RIGHT SIDE ACTORS -->
+            <!-- Warehouse Staff -->
+            <rect x="850" y="200" width="100" height="30" class="actor-box"/>
+            <text x="900" y="220" text-anchor="middle" class="actor-text">Warehouse Staff</text>
+            
+            <!-- ERP System -->
+            <rect x="850" y="400" width="100" height="30" class="actor-box"/>
+            <text x="900" y="420" text-anchor="middle" class="actor-text">ERP System</text>
+            
+            <!-- Payment Gateway -->
+            <rect x="850" y="550" width="100" height="30" class="actor-box"/>
+            <text x="900" y="570" text-anchor="middle" class="actor-text">Payment Gateway</text>
+            
+            <!-- USE CASES (Ellipses) -->
+            
+            <!-- UC1: Browse Catalog -->
+            <ellipse cx="400" cy="135" rx="60" ry="25" class="use-case-ellipse"/>
+            <text x="400" y="135" text-anchor="middle" class="use-case-text">Browse Catalog</text>
+            
+            <!-- UC2: Register Company -->
+            <ellipse cx="400" cy="210" rx="60" ry="25" class="use-case-ellipse"/>
+            <text x="400" y="210" text-anchor="middle" class="use-case-text">Register Company</text>
+            
+            <!-- UC3: Place Order -->
+            <ellipse cx="500" cy="290" rx="60" ry="25" class="use-case-ellipse"/>
+            <text x="500" y="290" text-anchor="middle" class="use-case-text">Place Order</text>
+            
+            <!-- UC4: Manage Templates -->
+            <ellipse cx="400" cy="360" rx="65" ry="25" class="use-case-ellipse"/>
+            <text x="400" y="360" text-anchor="middle" class="use-case-text">Recurring Orders</text>
+            
+            <!-- UC5: Track Freshness -->
+            <ellipse cx="650" cy="215" rx="60" ry="25" class="use-case-ellipse"/>
+            <text x="650" y="215" text-anchor="middle" class="use-case-text">Track Freshness</text>
+            
+            <!-- UC6: Manage Users -->
+            <ellipse cx="500" cy="465" rx="60" ry="25" class="use-case-ellipse"/>
+            <text x="500" y="465" text-anchor="middle" class="use-case-text">Manage Users</text>
+            
+            <!-- UC7: Credit Management -->
+            <ellipse cx="600" cy="540" rx="65" ry="25" class="use-case-ellipse"/>
+            <text x="600" y="540" text-anchor="middle" class="use-case-text">Manage Credit</text>
+            
+            <!-- UC8: API Integration -->
+            <ellipse cx="650" cy="415" rx="60" ry="25" class="use-case-ellipse"/>
+            <text x="650" y="415" text-anchor="middle" class="use-case-text">API Integration</text>
+            
+            <!-- UC9: Process Returns -->
+            <ellipse cx="600" cy="350" rx="60" ry="25" class="use-case-ellipse"/>
+            <text x="600" y="350" text-anchor="middle" class="use-case-text">Handle Returns</text>
+            
+            <!-- UC10: Generate Reports -->
+            <ellipse cx="400" cy="610" rx="60" ry="25" class="use-case-ellipse"/>
+            <text x="400" y="610" text-anchor="middle" class="use-case-text">Generate Reports</text>
+            
+            <!-- UC11: System Admin -->
+            <ellipse cx="500" cy="680" rx="65" ry="25" class="use-case-ellipse"/>
+            <text x="500" y="680" text-anchor="middle" class="use-case-text">System Admin</text>
+            
+            <!-- INCLUDE/EXTEND Use Cases (smaller, dashed) -->
+            
+            <!-- Check Inventory (included by Place Order) -->
+            <ellipse cx="620" cy="290" rx="50" ry="20" class="use-case-ellipse" stroke-dasharray="3,3"/>
+            <text x="620" y="290" text-anchor="middle" class="use-case-text" font-size="10">Check Inventory</text>
+            
+            <!-- Validate VAT (included by Register) -->
+            <ellipse cx="520" cy="210" rx="45" ry="20" class="use-case-ellipse" stroke-dasharray="3,3"/>
+            <text x="520" y="210" text-anchor="middle" class="use-case-text" font-size="10">Validate VAT</text>
+            
+            <!-- Process Payment (included by Place Order) -->
+            <ellipse cx="620" cy="380" rx="50" ry="20" class="use-case-ellipse" stroke-dasharray="3,3"/>
+            <text x="620" y="380" text-anchor="middle" class="use-case-text" font-size="10">Process SEPA</text>
+            
+            <!-- CONNECTIONS -->
+            
+            <!-- Guest User connections -->
+            <line x1="150" y1="135" x2="340" y2="135" class="connection"/>
+            
+            <!-- Registered Buyer connections -->
+            <line x1="150" y1="265" x2="340" y2="135" class="connection"/>
+            <line x1="150" y1="265" x2="440" y2="290" class="connection"/>
+            <line x1="150" y1="265" x2="335" y2="360" class="connection"/>
+            <line x1="150" y1="265" x2="540" y2="350" class="connection"/>
+            
+            <!-- Company Manager connections -->
+            <line x1="150" y1="465" x2="340" y2="210" class="connection"/>
+            <line x1="150" y1="465" x2="440" y2="465" class="connection"/>
+            <line x1="150" y1="465" x2="535" y2="540" class="connection"/>
+            <line x1="150" y1="465" x2="340" y2="610" class="connection"/>
+            
+            <!-- Admin connections -->
+            <line x1="150" y1="665" x2="340" y2="610" class="connection"/>
+            <line x1="150" y1="665" x2="435" y2="680" class="connection"/>
+            <line x1="150" y1="665" x2="535" y2="540" class="connection"/>
+            <line x1="150" y1="665" x2="540" y2="350" class="connection"/>
+            
+            <!-- Warehouse Staff connections -->
+            <line x1="850" y1="215" x2="710" y2="215" class="connection"/>
+            
+            <!-- ERP System connections -->
+            <line x1="850" y1="415" x2="710" y2="415" class="connection"/>
+            
+            <!-- Payment Gateway connection -->
+            <line x1="850" y1="565" x2="670" y2="380" class="connection"/>
+            
+            <!-- Include relationships (dashed lines) -->
+            <line x1="560" y1="290" x2="570" y2="290" class="include-line" marker-end="url(#arrow-dashed)"/>
+            <text x="545" y="280" font-size="9" fill="#000">«include»</text>
+            
+            <line x1="460" y1="210" x2="475" y2="210" class="include-line" marker-end="url(#arrow-dashed)"/>
+            <text x="425" y="200" font-size="9" fill="#000">«include»</text>
+            
+            <line x1="540" y1="310" x2="580" y2="360" class="include-line" marker-end="url(#arrow-dashed)"/>
+            <text x="540" y="335" font-size="9" fill="#000">«include»</text>
+            
+            <!-- Legend Box -->
+            <rect x="820" y="680" width="160" height="90" stroke="#000" stroke-width="1" fill="white"/>
+            <text x="900" y="700" text-anchor="middle" font-size="12" font-weight="bold">Legend</text>
+            
+            <line x1="830" y1="715" x2="870" y2="715" stroke="#000" stroke-width="1"/>
+            <text x="875" y="720" font-size="10">Association</text>
+            
+            <line x1="830" y1="735" x2="870" y2="735" stroke="#000" stroke-width="1" stroke-dasharray="5,5"/>
+            <text x="875" y="740" font-size="10">Include</text>
+            
+            <ellipse cx="850" cy="755" rx="20" ry="10" fill="white" stroke="#000" stroke-width="1"/>
+            <text x="875" y="760" font-size="10">Use Case</text>
+        </svg>
+    </div>
+</body>
+</html>
